@@ -1,0 +1,56 @@
+pseudocode for rock paper scissors
+----
+
+logic for computer choice:
+
+create a function called getComputerChoice
+getComputerChoice
+-   randomly return one of 
+    the following string values:
+    - "rock", "paper", "scissors"
+-   initialize variable
+-   set variable equal to random number generator between 1-3 
+- if variable 1 = rock if 2 = paper if 3 = scissors  
+
+----
+
+logic for human choice:
+
+create a function called getHumanChoice
+prompt user to type the following string values:
+    - "rock", "paper", "scissors"
+
+we will NOT be handling invalid input in this assignment.
+
+ensure human choice parameter is case insensitive
+- rock”, “ROCK”, “RocK” will just be Rock and something similar for 
+    paper and scissors 
+    - capitalize first letter of each word and lowercase the rest
+    - concatenate lowercase to first capitalized letter 
+
+
+--------
+
+keep score of the game:
+
+create 2 variables humanScore and computerScore
+initialize variables to 0
+
+-------
+
+logic for a single round:
+
+create a function called playRound
+create two parameters: humanChoice and computerChoice
+use these parameters to take human and computer choices as arguments
+console log the string value representing round winner like
+"You lose! Paper beats rock"
+logic for win/loss (rock beats scissors)
+increment win / loss 
+
+-----
+
+logic for entire game:
+create a function called playGame this function just 
+throws playRound into a for loop 5 times and 
+says who the winner is and what the score is
