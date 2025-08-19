@@ -1,3 +1,7 @@
+const rockBtn = document.querySelector("#Rock");
+const paperBtn = document.querySelector("#Paper");
+const scissorsBtn = document.querySelector("#Scissors");
+
 //scores start at zero
 let humanScore = 0;
 let computerScore = 0;
@@ -16,16 +20,11 @@ function getComputerChoice(){
     }
 }
 
-//Get user's input and make first letter capitalized
-//and the rest lowercase
-function getHumanChoice(){
-    let x = (prompt("Rock, Paper, Scissors, SHOOT: "));
-    return x.charAt(0).toUpperCase() + x.slice(1).toLowerCase();
-}
 
 //RPS logic
 //Increase human/computer score depending on who won
 function playRound(x, y){
+    y = getComputerChoice();
     if (x === y){
         console.log("TIE!");
     } 
@@ -55,23 +54,23 @@ function playRound(x, y){
     }
 }
 
-//loops playround 5 times. 
 //logs the score
-function playGame(){
+// function playGame(){
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     playRound(humanSelection,computerSelection);
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection,computerSelection);
+//     if (computerScore > humanScore){
+//         console.log("You lost!");
+//         console.log("You: " + humanScore + " Computer: " + computerScore);
+//     } else if (computerScore < humanScore){
+//         console.log("You won!")
+//         console.log("You: " + humanScore + " Computer: " + computerScore);
+//     }
+//     if (computerScore == humanScore){
+//         console.log("TIE!!!");
+//     }
+// }
 
-    if (computerScore > humanScore){
-        console.log("You lost!");
-        console.log("You: " + humanScore + " Computer: " + computerScore);
-    } else if (computerScore < humanScore){
-        console.log("You won!")
-        console.log("You: " + humanScore + " Computer: " + computerScore);
-    }
-    if (computerScore == humanScore){
-        console.log("TIE!!!");
-    }
-}
+
 
