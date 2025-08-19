@@ -1,10 +1,7 @@
-const rockBtn = document.querySelector("#Rock");
-const paperBtn = document.querySelector("#Paper");
-const scissorsBtn = document.querySelector("#Scissors");
-
 //scores start at zero
 let humanScore = 0;
 let computerScore = 0;
+let tieScore = 0;
 
 //Randomly return Rock, paper or scissors.
 function getComputerChoice(){
@@ -20,37 +17,40 @@ function getComputerChoice(){
     }
 }
 
-
 //RPS logic
 //Increase human/computer score depending on who won
 function playRound(x, y){
     y = getComputerChoice();
     if (x === y){
-        console.log("TIE!");
+        tieScore++;
+        console.log("TIE!" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
     } 
     else if (x === "Rock" && y === "Scissors"){
-        console.log("You win! Rock beats Scissors")
         humanScore++;
+        console.log("(WIN) ROCK VS SCISSORS = ROCK WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore)
     }
     else if (x === "Rock" && y === "Paper"){
-        console.log("You lose! Paper beats Rock");
         computerScore++;
+        console.log("(LOSS) ROCK VS PAPER = ROCK LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
     }
     else if (x === "Paper" && y === "Rock"){
-        console.log("You win! Paper beats Rock");
         humanScore++;
+        console.log("(WIN) PAPER VS ROCK = PAPER WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+
     }
     else if (x === "Paper" && y === "Scissors"){
-        console.log("You lose! Scissors beats Paper");
         computerScore++;
+        console.log("(LOSS) PAPER VS SCISSORS = PAPER LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+
     }
     else if (x === "Scissors" && y === "Paper"){
-        console.log("You win! Scissors beats Paper");
         humanScore++;
+        console.log("(WIN) SCISSORS VS PAPER = SCISSORS WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+
     }
     else if (x === "Scissors" && y === "Rock"){
-        console.log("You lose! Rock beats Scissors");
         computerScore++;
+        console.log("(LOSS) SCISSORS VS ROCK = SCISSORS LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
     }
 }
 
@@ -72,5 +72,12 @@ function playRound(x, y){
 //     }
 // }
 
-
-
+document.getElementById("Rock").addEventListener("click", function(){
+    playRound('Rock');
+});
+document.getElementById("Paper").addEventListener("click", function(){
+    playRound('Paper')
+});
+document.getElementById("Scissors").addEventListener("click", function(){
+    playRound('Scissors')
+});
