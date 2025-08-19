@@ -58,11 +58,11 @@ function playRound(x, y){
 //loops playround 5 times. 
 //logs the score
 function playGame(){
-    for (let i = 0; i < 5; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection,computerSelection);
-    } 
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection,computerSelection);
+
     if (computerScore > humanScore){
         console.log("You lost!");
         console.log("You: " + humanScore + " Computer: " + computerScore);
