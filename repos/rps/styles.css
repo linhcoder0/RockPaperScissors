@@ -1,0 +1,40 @@
+#buttons{
+    text-align:center;
+    display:flex;
+    justify-content: center;
+  align-items: flex-start;
+}
+
+#pDiv{
+    color:red;
+    text-align: center;
+}
+
+#cDiv{
+    color:blue;
+    text-align: center;
+}
+
+#roundDiv{
+    color:green;
+    text-align: center;
+}
+
+#resultsDiv{
+    color:purple;
+    text-align: center;
+}
+
+#wDiv{
+    color: yellow;
+    text-align: center;
+}
+
+#card{
+    display:flex;
+    word-break: break-all;
+    color:black;
+    border:solid;
+    border-radius: 5px;
+}; 
+
