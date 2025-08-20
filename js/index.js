@@ -42,7 +42,7 @@ function playRound(x, y){
     if (x === y){
         rounds++;
         roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
-        let results = ("TIE!" + " P: " + humanScore + " C: " + computerScore);
+        let results = ("TIE!");
         resultsDiv.innerHTML = "Results: " +  results; 
     } 
     else if (x === "Rock" && y === "Scissors"){
