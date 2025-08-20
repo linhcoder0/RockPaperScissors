@@ -1,23 +1,88 @@
 #buttons{
-    text-align:center;
     display:flex;
-    justify-content: center;
-  align-items: flex-start;
+    justify-content:space-between;
+  margin: 4px 2px;
+}
+
+/* button#Rock {
+        background: royalblue;
+    border: 1px solid black;
+    color: white;
+        border-radius: 5px;
+} */
+
+/* button#Rock :hover{
+        background: royalblue;
+    border: 1px solid black;
+    color: white;
+        border-radius: 5px;
+
+}
+ */
+
+
+/* button#Paper  {
+    background: royalblue;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+} */
+
+/* button#Paper :hover{
+    background: royalblue;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+} */
+
+/* button#Scissors {
+    background: royalblue;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+} */
+
+/* button#Scissors :hover{
+    background: royalblue;
+    border: 1px solid green;
+    color: white;
+        border-radius: 5px;
+
+} */
+
+#scoreCard{
+    display:flex;
+    justify-content:space-between;
+  margin: 4px 2px;
+     
 }
 
 #pDiv{
     color:red;
     text-align: center;
+    border:solid;
+    border-radius: 5px;
+        width:75px;
+    height:75px;
+    
 }
 
 #cDiv{
     color:blue;
     text-align: center;
+    border:solid;
+    border-radius: 5px;
+        width:75px;
+    height:75px;
 }
 
 #roundDiv{
     color:green;
     text-align: center;
+    border:solid;
+    border-radius: 5px;
+        width:75px;
+    height:75px;
 }
 
 #resultsDiv{
@@ -30,9 +95,7 @@
     text-align: center;
 }
 
-#card{
-    display:flex;
-    word-break: break-all;
+#card{    
     color:black;
     border:solid;
     border-radius: 5px;

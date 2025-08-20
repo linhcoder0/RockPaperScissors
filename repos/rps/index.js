@@ -24,15 +24,15 @@ function playRound(x, y){
     y = getComputerChoice();
     if (x === y){
         rounds++;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("TIE!" + " P: " + humanScore + " C: " + computerScore);
         resultsDiv.innerHTML = "Results: " +  results; 
     } 
     else if (x === "Rock" && y === "Scissors"){
         humanScore++;
         rounds++;
-        playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
 
         let results = ("(WIN) ROCK VS SCISSORS = ROCK WIN");
         resultsDiv.innerHTML = "Results: " +  results; 
@@ -41,8 +41,8 @@ function playRound(x, y){
     else if (x === "Rock" && y === "Paper"){
         computerScore++;
                 rounds++;
-        computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+        computerSelectionDiv.innerHTML = "<p>COM</p>"  + computerScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(LOSS) ROCK VS PAPER = ROCK LOSS");
         resultsDiv.innerHTML = "Results: " +  results; 
 
@@ -50,8 +50,8 @@ function playRound(x, y){
     else if (x === "Paper" && y === "Rock"){
         humanScore++;
                 rounds++;
-        playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(WIN) PAPER VS ROCK = PAPER WIN");
         resultsDiv.innerHTML = "Results: " +  results; 
 
@@ -59,8 +59,8 @@ function playRound(x, y){
     else if (x === "Paper" && y === "Scissors"){
         computerScore++;
                 rounds++;
-        computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+        computerSelectionDiv.innerHTML = "<p>COM</p>"  + computerScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(LOSS) PAPER VS SCISSORS = PAPER LOSS");
         resultsDiv.innerHTML = "Results: " +  results; 
 
@@ -68,8 +68,8 @@ function playRound(x, y){
     else if (x === "Scissors" && y === "Paper"){
         humanScore++;
         rounds++;
-        playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
+playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(WIN) SCISSORS VS PAPER = SCISSORS WIN");
         resultsDiv.innerHTML = "Results: " +  results; 
 
@@ -77,9 +77,8 @@ function playRound(x, y){
     else if (x === "Scissors" && y === "Rock"){
         computerScore++;
         rounds++;
-        computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        roundDiv.innerHTML = "<p>Rounds:</p>" + rounds;
-
+        computerSelectionDiv.innerHTML = "<p>COM</p>"  + computerScore;
+        roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(LOSS) SCISSORS VS ROCK = SCISSORS LOSS");
         resultsDiv.innerHTML = "Results: " +  results; 
 
@@ -118,23 +117,27 @@ const card = document.createElement("div");
 card.setAttribute("id", "card");
 document.body.appendChild(card);
 
-const buttons = document.getElementById("buttons")
-card.appendChild(buttons);
+const scoreCard = document.createElement("div");
+scoreCard.setAttribute("id", "scoreCard");
+card.appendChild(scoreCard)
 
 const playerScoreDiv = document.createElement("div");
 playerScoreDiv.setAttribute("id", "pDiv");
-playerScoreDiv.innerHTML = "<p>Human Score: </p>" + humanScore;
-card.appendChild(playerScoreDiv)
+playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+scoreCard.appendChild(playerScoreDiv)
 
 const roundDiv = document.createElement("div");
 roundDiv.setAttribute("id", "roundDiv");
-roundDiv.innerHTML = "<p>Rounds: </p>"  + rounds;
-card.appendChild(roundDiv)
+roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
+scoreCard.appendChild(roundDiv)
 
 const computerSelectionDiv = document.createElement("div");
 computerSelectionDiv.setAttribute("id", "cDiv");
-computerSelectionDiv.innerHTML = "<p>Computer Score:</p>"  + computerScore;
-card.appendChild(computerSelectionDiv)
+computerSelectionDiv.innerHTML = "<p>COM</p>"  + computerScore;
+scoreCard.appendChild(computerSelectionDiv)
+
+const buttons = document.getElementById("buttons")
+card.appendChild(buttons);
 
 const resultsDiv = document.createElement("div");
 resultsDiv.setAttribute("id", "resultsDiv");
