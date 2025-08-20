@@ -4,6 +4,23 @@ let rounds = 0;
 let computerScore = 0;
 let gameComplete = false;
 
+function restartGame(){
+    humanScore = 0;
+    rounds = 0;
+    computerScore = 0;
+    gameComplete = false;
+
+    document.getElementById("restartButton").disabled = true;
+    document.getElementById("Rock").disabled = false;
+    document.getElementById("Paper").disabled = false;
+    document.getElementById("Scissors").disabled = false;
+    playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+    roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
+    computerSelectionDiv.innerHTML = "<p>COM</p>"  + computerScore;
+    winnerDiv.innerHTML = "Winner: " + winner;  
+    resultsDiv.innerHTML = "Results: "; 
+}
+
 //Randomly return Rock, paper or scissors.
 function getComputerChoice(){
     let x = Math.floor(Math.random() * 3) + 1; 
@@ -31,7 +48,7 @@ function playRound(x, y){
     else if (x === "Rock" && y === "Scissors"){
         humanScore++;
         rounds++;
-playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
         roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
 
         let results = ("(WIN) ROCK VS SCISSORS = ROCK WIN");
@@ -50,7 +67,7 @@ playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
     else if (x === "Paper" && y === "Rock"){
         humanScore++;
                 rounds++;
-playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
         roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(WIN) PAPER VS ROCK = PAPER WIN");
         resultsDiv.innerHTML = "Results: " +  results; 
@@ -68,7 +85,7 @@ playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
     else if (x === "Scissors" && y === "Paper"){
         humanScore++;
         rounds++;
-playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
+        playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
         roundDiv.innerHTML = "<p>ROUNDS</p>"  + rounds;
         let results = ("(WIN) SCISSORS VS PAPER = SCISSORS WIN");
         resultsDiv.innerHTML = "Results: " +  results; 
@@ -93,7 +110,11 @@ playerScoreDiv.innerHTML = "<p>YOU</p>" + humanScore;
         winnerDiv.innerHTML = "Winner: " + winner;  
         gameComplete= true;
     } 
+    if(!gameComplete){
+        document.getElementById("restartButton").disabled = true;
+    }
     if(gameComplete){
+        document.getElementById("restartButton").disabled = false;
         document.getElementById("Rock").disabled = true;
         document.getElementById("Paper").disabled = true;
         document.getElementById("Scissors").disabled = true;
@@ -148,3 +169,16 @@ const winnerDiv = document.createElement("div");
 winnerDiv.setAttribute("id", "wDiv");
 winnerDiv.innerHTML = "Winner: " + winner;
 card.appendChild(winnerDiv)
+
+const restartButtonDiv = document.createElement("div");
+restartButtonDiv.setAttribute("id", "restartButtonDiv");
+card.appendChild(restartButtonDiv);
+
+const restartButton = document.createElement("button");
+restartButton.setAttribute("id", "restartButton");
+restartButton.innerHTML = "RESTART";
+restartButtonDiv.appendChild(restartButton);
+document.getElementById("restartButton").disabled = true;
+document.getElementById("restartButton").addEventListener("click", function(){
+    restartGame();
+});

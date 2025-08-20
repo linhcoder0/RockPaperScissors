@@ -1,87 +1,48 @@
 #buttons{
     display:flex;
     justify-content:space-between;
-  margin: 4px 2px;
-}
-
-/* button#Rock {
-        background: royalblue;
-    border: 1px solid black;
-    color: white;
-        border-radius: 5px;
-} */
-
-/* button#Rock :hover{
-        background: royalblue;
-    border: 1px solid black;
-    color: white;
-        border-radius: 5px;
+    margin: 10px 10px;
 
 }
- */
-
-
-/* button#Paper  {
-    background: royalblue;
-    border: 1px solid black;
-    color: white;
-    border-radius: 5px;
-} */
-
-/* button#Paper :hover{
-    background: royalblue;
-    border: 1px solid black;
-    color: white;
-    border-radius: 5px;
-} */
-
-/* button#Scissors {
-    background: royalblue;
-    border: 1px solid black;
-    color: white;
-    border-radius: 5px;
-} */
-
-/* button#Scissors :hover{
-    background: royalblue;
-    border: 1px solid green;
-    color: white;
-        border-radius: 5px;
-
-} */
 
 #scoreCard{
     display:flex;
     justify-content:space-between;
-  margin: 4px 2px;
+    margin: 10px 10px;
      
 }
 
 #pDiv{
     color:red;
+    background-color:white;
     text-align: center;
     border:solid;
     border-radius: 5px;
-        width:75px;
+
+    width:75px;
     height:75px;
     
 }
 
 #cDiv{
     color:blue;
+        background-color:white;
+
     text-align: center;
     border:solid;
     border-radius: 5px;
-        width:75px;
+    width:75px;
     height:75px;
 }
 
 #roundDiv{
     color:green;
+    background-color:white;
+
     text-align: center;
     border:solid;
     border-radius: 5px;
-        width:75px;
+    width:75px;
     height:75px;
 }
 
@@ -95,9 +56,21 @@
     text-align: center;
 }
 
+#restartButtonDiv{
+    display:flex;
+    justify-content: center;
+}
+
+button#restartButton{
+    background-color:orange;
+    font-size:18px;
+}
+
 #card{    
     color:black;
+    background-color:rgb(139, 139, 97);
+    width: 350px;
+    height:250px;
     border:solid;
     border-radius: 5px;
 }; 
-
