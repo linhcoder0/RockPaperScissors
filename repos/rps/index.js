@@ -24,40 +24,50 @@ function playRound(x, y){
     if (x === y){
         tieScore++;
         tieScoreDiv.innerHTML = "<p>Tie Score:</p>" + tieScore;
-        console.log("TIE!" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("TIE!" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
     } 
     else if (x === "Rock" && y === "Scissors"){
         humanScore++;
         playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        console.log("(WIN) ROCK VS SCISSORS = ROCK WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore)
+        let results = ("(WIN) ROCK VS SCISSORS = ROCK WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore)
+        resultsDiv.innerHTML = "Results: " +  results; 
+
     }
     else if (x === "Rock" && y === "Paper"){
         computerScore++;
         computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        console.log("(LOSS) ROCK VS PAPER = ROCK LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("(LOSS) ROCK VS PAPER = ROCK LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
+
     }
     else if (x === "Paper" && y === "Rock"){
         humanScore++;
         playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        console.log("(WIN) PAPER VS ROCK = PAPER WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("(WIN) PAPER VS ROCK = PAPER WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
 
     }
     else if (x === "Paper" && y === "Scissors"){
         computerScore++;
         computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        console.log("(LOSS) PAPER VS SCISSORS = PAPER LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("(LOSS) PAPER VS SCISSORS = PAPER LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
 
     }
     else if (x === "Scissors" && y === "Paper"){
         humanScore++;
         playerScoreDiv.innerHTML = "<p>Human Score:</p>" + humanScore;
-        console.log("(WIN) SCISSORS VS PAPER = SCISSORS WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("(WIN) SCISSORS VS PAPER = SCISSORS WIN" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
 
     }
     else if (x === "Scissors" && y === "Rock"){
         computerScore++;
         computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
-        console.log("(LOSS) SCISSORS VS ROCK = SCISSORS LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        let results = ("(LOSS) SCISSORS VS ROCK = SCISSORS LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
+        resultsDiv.innerHTML = "Results: " +  results; 
+
     }
     if(humanScore >= 5) {
         let winner = "YOU! :)"
@@ -87,6 +97,8 @@ function playRound(x, y){
 //     }
 // }
 let winner = "";
+let reults = "";
+
 document.getElementById("Rock").addEventListener("click", function(){
     playRound('Rock');
 });
@@ -114,6 +126,12 @@ computerSelectionDiv.setAttribute("id", "cDiv");
 computerSelectionDiv.style.color = "blue";
 computerSelectionDiv.innerHTML = "<p>Computer Score:</p>"  + computerScore;
 document.body.appendChild(computerSelectionDiv)
+
+const resultsDiv = document.createElement("div");
+resultsDiv.setAttribute("id", "rDiv");
+resultsDiv.style.color = "green"
+resultsDiv.innerHTML = "Results: " + reults;
+document.body.appendChild(resultsDiv)
 
 const winnerDiv = document.createElement("div");
 winnerDiv.setAttribute("id", "wDiv");
