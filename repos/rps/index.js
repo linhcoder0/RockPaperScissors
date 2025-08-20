@@ -59,6 +59,14 @@ function playRound(x, y){
         computerSelectionDiv.innerHTML = "<p>Computer Score:</p>" + computerScore;
         console.log("(LOSS) SCISSORS VS ROCK = SCISSORS LOSS" + " P: " + humanScore + " T: " + tieScore + " C: " + computerScore);
     }
+    if(humanScore >= 5) {
+        let winner = "YOU! :)"
+        winnerDiv.innerHTML = "Winner: " + winner;  
+    } 
+    if(computerScore >= 5) {
+        let winner = "THE BOT! :("
+        winnerDiv.innerHTML = "Winner: " + winner;  
+    } 
 }
 
 //logs the score
@@ -78,7 +86,7 @@ function playRound(x, y){
 //         console.log("TIE!!!");
 //     }
 // }
-
+let winner = "";
 document.getElementById("Rock").addEventListener("click", function(){
     playRound('Rock');
 });
@@ -106,3 +114,9 @@ computerSelectionDiv.setAttribute("id", "cDiv");
 computerSelectionDiv.style.color = "blue";
 computerSelectionDiv.innerHTML = "<p>Computer Score:</p>"  + computerScore;
 document.body.appendChild(computerSelectionDiv)
+
+const winnerDiv = document.createElement("div");
+winnerDiv.setAttribute("id", "wDiv");
+winnerDiv.style.color = "yellow"
+winnerDiv.innerHTML = "Winner: " + winner;
+document.body.appendChild(winnerDiv)
